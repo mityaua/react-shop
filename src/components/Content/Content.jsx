@@ -1,3 +1,4 @@
+// import PropTypes from 'prop-types'
 import Products from '../../pages/Products';
 // import Contacts from '../../pages/Contacts';
 

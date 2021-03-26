@@ -1,34 +1,65 @@
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import IconButton from '@material-ui/core/IconButton';
+import AddShoppingCartOutlinedIcon from '@material-ui/icons/AddShoppingCartOutlined';
 import PropTypes from 'prop-types';
+import { createUseStyles } from 'react-jss';
 
-import phone from '../../assets/phone.jpg';
-import notebook from '../../assets/notebook.jpg';
-import placeholder from '../../assets/placeholder.jpg';
+import { loadImage } from '../../utils/loadImage/index';
 
-const images = {
-  phone,
-  notebook,
+const useStyles = createUseStyles({
+  item: {
+    display: 'flex',
+    marginBottom: 10,
+    alignItems: 'flex-start',
+  },
+
+  card: {
+    padding: 10,
+  },
+
+  image: {
+    height: 100,
+  },
+});
+
+const ProductsItem = ({ product }) => {
+  const x = 15;
+  const classes = useStyles(x);
+
+  return (
+    <li className={classes.item}>
+      <CardActionArea>
+        <Card className={classes.card}>
+          <p>Name: {product.name}</p>
+          <img
+            className={classes.image}
+            src={loadImage(product.img)}
+            alt={product.name}
+          />
+          <p>Price: {product.price}</p>
+          <p>Count: {product.count}</p>
+        </Card>
+      </CardActionArea>
+
+      <IconButton>
+        <AddShoppingCartOutlinedIcon />
+      </IconButton>
+    </li>
+  );
 };
 
-const ProductsItem = ({ product }) => (
-  <li className="item">
-    <p>Name: {product.name}</p>
-    <img className="item__img" src={images[product.img]} alt={product.name} />
-    <p>Price: {product.price}</p>
-    <p>Count: {product.count}</p>
-  </li>
-);
-
 ProductsItem.defaultProps = {
-  img: placeholder,
+  img: '',
 };
 
 ProductsItem.propTypes = {
   product: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      img: PropTypes.string,
-      price: PropTypes.number.isRequired,
-      count: PropTypes.number.isRequired,
-    }).isRequired,
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    count: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default ProductsItem;

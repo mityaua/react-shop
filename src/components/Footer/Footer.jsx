@@ -1,7 +1,7 @@
-// import PropTypes from 'prop-types'
+import styles from './Footer.module.scss'
 
 const Footer = () => {
-  return <footer className="footer">footer</footer>;
+  return <footer className={styles.footer}>footer</footer>;
 };
 
 export default Footer;

@@ -11,11 +11,11 @@ img {
   height: auto;
 }
 
-li {
+/* li {
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} */
 
 h1,
 h2,
@@ -41,14 +41,6 @@ li {
   display: flex;
 }
 
-/* Header */
-.header {
-  display: flex;
-  flex: 1;
-
-  border: 1px solid black;
-}
-
 /* Menu */
 .menu {
   display: flex;
@@ -65,14 +57,6 @@ li {
 }
 
 /* Product img */
-.item__img {
+/* .item__img {
   width: 300px;
-}
-
-/* Footer */
-.footer {
-  display: flex;
-  flex: 1;
-
-  border: 1px solid black;
-}
+} */

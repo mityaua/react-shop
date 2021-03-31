@@ -48,6 +48,7 @@ const SingleCounter = () => {
         <p>{value}</p>
         <button onClick={handleIncrement}>+</button>
       </div>
+      <hr />
     </div>
   );
 };

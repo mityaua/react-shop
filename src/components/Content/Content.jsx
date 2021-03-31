@@ -1,16 +1,13 @@
-// import PropTypes from 'prop-types'
-import Products from '../../pages/Products';
-import Contacts from '../../pages/Contacts';
-import Todos from '../../pages/Todos';
+import { routes } from '../routes';
 
 const Content = () => {
   const { pathname } = window.location;
 
   return (
     <main className="content">
-      {pathname === '/products' && <Products />}
-      {pathname === '/contacts' && <Contacts />}
-      {pathname === '/todos' && <Todos />}
+      {routes.map(({ path, label, component: Component }) =>
+        pathname === path ? <Component key={label} /> : null,
+      )}
     </main>
   );
 };

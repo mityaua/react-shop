@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types'
-
 const Menu = () => {
   return (
     <nav className="menu">
@@ -10,6 +8,7 @@ const Menu = () => {
       <a href="/order">Order</a>
       <a href="/profile">Profile</a>
       <a href="/contacts">Contacts</a>
+      <a href="/todos">Todos</a>
     </nav>
   );
 };

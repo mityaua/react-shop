@@ -1,3 +1,5 @@
+// Linter test (delete)
+
 import { routes } from '../routes';
 
 const Content = () => {

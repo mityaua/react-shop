@@ -1,7 +1,6 @@
 import { useState } from 'react';
-
 import ProductsList from '../components/ProductsList';
-// import products from '../data/products.json';
+import ProductForm from '../components/ProductForm';
 
 const Products = () => {
   const [products, setProducts] = useState([
@@ -14,8 +13,13 @@ const Products = () => {
     },
   ]);
 
+  const handleProduct = newItem => {
+    setProducts(prev => [...prev, newItem]);
+  };
+
   return (
     <div className="products">
+      <ProductForm onSubmit={handleProduct} />
       <ProductsList products={products} />
     </div>
   );

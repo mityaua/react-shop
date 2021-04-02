@@ -38,6 +38,9 @@ const ProductsItem = ({ product }) => {
           />
           <p>Price: {product.price}</p>
           <p>Count: {product.count}</p>
+          <p>Color: {product.color || '--'}</p>
+          <p>Insurance: {product?.insurance?.toString() || '--'}</p>
+          <p>Software: {product?.software?.toString() || '--'}</p>
         </Card>
       </CardActionArea>
 

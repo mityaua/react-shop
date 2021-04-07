@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -18,12 +18,7 @@ const SingleCounter = () => {
   const handleDecrement = () => setValue(prevState => prevState - step);
   const handleIncrement = () => setValue(prevState => prevState + step);
 
-  const handleChangeStep = event =>
-    setStep(Number(event.target.value));
-
-  useEffect(() => {
-    console.log('value', value);
-  }, [value]);
+  const handleChangeStep = event => setStep(Number(event.target.value));
 
   return (
     <div className={classes.counter}>
@@ -31,10 +26,7 @@ const SingleCounter = () => {
 
       <label>
         <span>Step</span>
-        <select
-          value={step}
-          onChange={handleChangeStep}
-        >
+        <select value={step} onChange={handleChangeStep}>
           <option value="1">1</option>
           <option value="5">5</option>
           <option value="10">10</option>

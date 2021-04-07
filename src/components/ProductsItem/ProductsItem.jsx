@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
@@ -26,6 +27,8 @@ const ProductsItem = ({ product }) => {
   const x = 15;
   const classes = useStyles(x);
 
+  console.log(product.id);
+
   return (
     <li className={classes.item}>
       <CardActionArea>
@@ -49,6 +52,18 @@ const ProductsItem = ({ product }) => {
       </IconButton>
     </li>
   );
+};
+
+ProductsItem.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.number,
+    count: PropTypes.number,
+    color: PropTypes.string,
+    insurance: PropTypes.bool,
+    software: PropTypes.bool,
+    img: PropTypes.string,
+  }),
 };
 
 export default ProductsItem;

@@ -3,32 +3,25 @@ import CounterList from './CounterList';
 import SingleCounter from './SingleCounter';
 
 const Counters = () => {
-  const [counters, setCounters] = useState([
-    {
-      id: 1,
-      value: 12,
-    },
-    {
-      id: 2,
-      value: 87,
-    },
-  ]);
+  const [counters, setCounters] = useState([]);
 
   // componentDidMount
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('counters'));
 
-    setCounters(data);
+    if (data) {
+      setCounters(data);
+    }
   }, []);
 
-  // componentDidUpdate (после обновления даты)
+  // componentDidUpdate (после обновления counters)
   useEffect(() => {
     localStorage.setItem('counters', JSON.stringify(counters));
   }, [counters]);
 
-  // componentDidUpdate (после рендера)
+  // componentDidUpdate (всегда после рендера)
   useEffect(() => {
-    console.log('Третий useEffect');
+    // console.log('Третий useEffect');
   });
 
   const addCounter = () =>

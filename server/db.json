@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "name": "Nokia",
+      "price": 3565,
+      "count": 3,
+      "color": "gray",
+      "insurance": false,
+      "software": false,
+      "img": "phone",
+      "id": 1
+    },
+    {
+      "name": "Mac",
+      "price": 344535,
+      "count": 1,
+      "color": "black",
+      "insurance": false,
+      "software": false,
+      "img": "notebook",
+      "id": 2
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productId": 3,
+      "count": 1
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 .header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex: 1;
 
   border: 1px solid black;

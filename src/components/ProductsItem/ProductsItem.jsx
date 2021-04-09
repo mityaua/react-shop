@@ -3,8 +3,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
 import AddShoppingCartOutlinedIcon from '@material-ui/icons/AddShoppingCartOutlined';
-import { createUseStyles } from 'react-jss';
+import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 
+import { createUseStyles } from 'react-jss';
 import { loadImage } from '../../utils/loadImage/index';
 
 const useStyles = createUseStyles({
@@ -23,11 +24,11 @@ const useStyles = createUseStyles({
   },
 });
 
-const ProductsItem = ({ product }) => {
+const ProductsItem = ({ product, onDelete }) => {
   const x = 15;
   const classes = useStyles(x);
 
-  console.log(product.id);
+  const handleDelete = () => onDelete(product.id);
 
   return (
     <li className={classes.item}>
@@ -47,9 +48,15 @@ const ProductsItem = ({ product }) => {
         </Card>
       </CardActionArea>
 
-      <IconButton>
-        <AddShoppingCartOutlinedIcon />
-      </IconButton>
+      <div className="icons">
+        <IconButton>
+          <AddShoppingCartOutlinedIcon />
+        </IconButton>
+
+        <IconButton onClick={handleDelete}>
+          <HighlightOffOutlinedIcon />
+        </IconButton>
+      </div>
     </li>
   );
 };

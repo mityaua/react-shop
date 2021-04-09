@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
   },
 });
 
-const ProductsList = ({ products }) => {
+const ProductsList = ({ products, onDelete }) => {
   const classes = useStyles();
 
   return (
@@ -19,7 +19,11 @@ const ProductsList = ({ products }) => {
       {products.map(
         product =>
           !!product.count && (
-            <ProductsItem key={product.id} product={product} />
+            <ProductsItem
+              key={product.id}
+              product={product}
+              onDelete={onDelete}
+            />
           ),
       )}
     </ul>

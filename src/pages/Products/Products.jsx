@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import ProductsList from '../components/ProductsList';
-import ProductForm from '../components/ProductForm';
+import ProductsList from '../../components/ProductsList';
+import ProductForm from '../../components/ProductForm';
 
-import { getProducts, addProduct, deleteProduct } from '../utils/api';
+import { getProducts, addProduct, deleteProduct } from '../../utils/api';
 
 const Products = () => {
   const [products, setProducts] = useState([]);

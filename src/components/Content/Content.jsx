@@ -1,15 +1,20 @@
-// Linter test (delete)
+import { Suspense } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from '../../pages/Page404';
 
 import { routes } from '../routes';
 
 const Content = () => {
-  const { pathname } = window.location;
-
   return (
     <main className="content">
-      {routes.map(({ path, label, component: Component }) =>
-        pathname === path ? <Component key={label} /> : null,
-      )}
+      <Suspense fallback={<h1>Loading</h1>}>
+        <Switch>
+          {routes.map(({ path, exact, component: Component }) => (
+            <Route key={path} path={path} exact={exact} component={Component} />
+          ))}
+          <Route component={HomePage} />
+        </Switch>
+      </Suspense>
     </main>
   );
 };

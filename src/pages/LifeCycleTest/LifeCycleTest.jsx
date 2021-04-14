@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Timer from '../components/Timer';
-import Modal from '../components/Modal';
+import Timer from '../../components/Timer';
+import Modal from '../../components/Modal';
 
 const LifeCycleTest = () => {
   const [showTimer, setShowTimer] = useState(false);

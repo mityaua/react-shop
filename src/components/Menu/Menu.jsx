@@ -17,16 +17,18 @@ const Menu = () => {
     <nav className="menu">
       <p>Menu</p>
 
-      {routes.map(({ path, exact, label }) => (
-        <NavLink
-          activeClassName={classes.active}
-          key={path}
-          exact={exact}
-          to={path}
-        >
-          {label}
-        </NavLink>
-      ))}
+      {routes.map(({ path, exact, showInMenu, label }) =>
+        showInMenu ? (
+          <NavLink
+            activeClassName={classes.active}
+            key={path}
+            exact={exact}
+            to={path}
+          >
+            {label}
+          </NavLink>
+        ) : null,
+      )}
     </nav>
   );
 };

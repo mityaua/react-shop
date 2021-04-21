@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import CounterList from './CounterList';
-import SingleCounter from './SingleCounter';
+// import CounterList from './CounterList';
+// import SingleCounter from './SingleCounter';
+import SingleCounterRedux from './SingleCounterRedux';
 
 const Counters = () => {
   const [counters, setCounters] = useState([]);
@@ -24,55 +25,55 @@ const Counters = () => {
     // console.log('Третий useEffect');
   });
 
-  const addCounter = () =>
-    setCounters(prevState => [
-      ...prevState,
-      {
-        id: Date.now(),
-        value: 0,
-      },
-    ]);
+  // const addCounter = () =>
+  //   setCounters(prevState => [
+  //     ...prevState,
+  //     {
+  //       id: Date.now(),
+  //       value: 0,
+  //     },
+  //   ]);
 
-  const handledeleteCounter = id =>
-    setCounters(prevState => prevState.filter(counter => counter.id !== id));
+  // const handledeleteCounter = id =>
+  //   setCounters(prevState => prevState.filter(counter => counter.id !== id));
 
-  const hanleIncrement = id =>
-    setCounters(prevState =>
-      prevState.map(counter =>
-        counter.id === id
-          ? {
-              ...counter,
-              value: counter.value + 1,
-            }
-          : counter,
-      ),
-    );
+  // const hanleIncrement = id =>
+  //   setCounters(prevState =>
+  //     prevState.map(counter =>
+  //       counter.id === id
+  //         ? {
+  //             ...counter,
+  //             value: counter.value + 1,
+  //           }
+  //         : counter,
+  //     ),
+  //   );
 
-  const hanleDecrement = id =>
-    setCounters(prevState =>
-      prevState.map(counter =>
-        counter.id === id
-          ? {
-              ...counter,
-              value: counter.value - 1,
-            }
-          : counter,
-      ),
-    );
+  // const hanleDecrement = id =>
+  //   setCounters(prevState =>
+  //     prevState.map(counter =>
+  //       counter.id === id
+  //         ? {
+  //             ...counter,
+  //             value: counter.value - 1,
+  //           }
+  //         : counter,
+  //     ),
+  //   );
 
   return (
     <div className="counters">
       <h2>Counters</h2>
-      <SingleCounter />
+      <SingleCounterRedux />
 
-      <button onClick={addCounter}>Add counter</button>
+      {/* <button onClick={addCounter}>Add counter</button>
 
       <CounterList
         counters={counters}
         onIncrement={hanleIncrement}
         onDecrement={hanleDecrement}
         onDelete={handledeleteCounter}
-      />
+      /> */}
     </div>
   );
 };

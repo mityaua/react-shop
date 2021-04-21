@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:7777';
+axios.defaults.baseURL = 'http://localhost:8888';
 
 // Запрос за продуктами
 export const getProducts = () =>

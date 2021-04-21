@@ -19,7 +19,10 @@ const MovieSearch = lazy(() =>
   import('../pages/MovieSearch' /* webpackChunkName: "MovieSearch" */),
 );
 const MovieDetails = lazy(() =>
-  import('../pages/MovieDetails' /* webpackChunkName: "MovieSearch" */),
+  import('../pages/MovieDetails' /* webpackChunkName: "MovieDetails" */),
+);
+const Todos = lazy(() =>
+  import('../pages/Todos' /* webpackChunkName: "Todos" */),
 );
 
 export const routes = [
@@ -66,5 +69,11 @@ export const routes = [
     label: 'Movie Details',
     component: MovieDetails,
     showInMenu: false,
+  },
+  {
+    path: '/todos',
+    label: 'Todos',
+    component: Todos,
+    showInMenu: true,
   },
 ];

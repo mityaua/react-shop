@@ -12,12 +12,6 @@ const CounterItem = React.memo(
     const handleDecrement = () => onDecrement(counter.id);
     const handleDelete = () => onDelete(counter.id);
 
-    console.log('render', counter.id);
-
-    if (counter.value > 10) {
-      throw new Error('Test Error message!');
-    }
-
     return (
       <li className="counter-item">
         <button onClick={handleDecrement}>-</button>

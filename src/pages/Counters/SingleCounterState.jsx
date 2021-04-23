@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -9,22 +10,19 @@ const useStyles = createUseStyles({
   },
 });
 
-const SingleCounter = ({
-  step,
-  value,
-  onSetStep,
-  onDecrement,
-  onIncrement,
-}) => {
+const SingleCounter = () => {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+  const [step, setStep] = useState(1);
 
-  const handleChangeStep = event => onSetStep(Number(event.target.value));
-  const handleDecrement = () => onDecrement(step);
-  const handleIncrement = () => onIncrement(step);
+  const handleDecrement = () => setValue(prevState => prevState - step);
+  const handleIncrement = () => setValue(prevState => prevState + step);
+
+  const handleChangeStep = event => setStep(Number(event.target.value));
 
   return (
     <div className={classes.counter}>
-      <h4>Single Counter Redux</h4>
+      <h4>Single Counter</h4>
 
       <label>
         <span>Step</span>

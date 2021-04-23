@@ -3,7 +3,7 @@ import types from './types';
 
 const initialState = {
   value: 10,
-  step: 1,
+  step: 12,
 };
 
 const valueReducer = (state = initialState.value, { type, payload = 1 }) => {

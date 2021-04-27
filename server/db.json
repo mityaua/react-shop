@@ -21,11 +21,19 @@
       "id": 2
     }
   ],
-  "cart": [
+  "cart": [],
+  "todos": [
     {
-      "id": 1,
-      "productId": 3,
-      "count": 1
+      "text": "fhfh",
+      "created": 1619517829542,
+      "isDone": true,
+      "id": 1619513382157
+    },
+    {
+      "text": "ffff",
+      "created": 1619519093784,
+      "isDone": false,
+      "id": 1619513382158
     }
   ]
 }

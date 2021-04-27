@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify';
+
 import Layout from './components/Layout';
 import Header from './components/Header/';
 import Container from './components/Container';
@@ -6,6 +8,7 @@ import Content from './components/Content/';
 import Footer from './components/Footer/';
 
 import './index.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <Layout>
@@ -17,6 +20,8 @@ const App = () => (
     </Container>
 
     <Footer />
+
+    <ToastContainer />
   </Layout>
 );
 

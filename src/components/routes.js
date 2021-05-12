@@ -24,6 +24,9 @@ const MovieDetails = lazy(() =>
 const Todos = lazy(() =>
   import('../pages/Todos' /* webpackChunkName: "Todos" */),
 );
+const LoginPage = lazy(() =>
+  import('../pages/LoginPage' /* webpackChunkName: "LoginPage" */),
+);
 
 export const routes = [
   {
@@ -32,30 +35,35 @@ export const routes = [
     component: HomePage,
     exact: true,
     showInMenu: true,
+    isProtected: false,
   },
   {
     path: '/products',
     label: 'Products',
     component: Products,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/contacts',
     label: 'Contacts',
     component: Contacts,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/counters',
     label: 'Counters',
     component: Counters,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/life-cycle-test',
     label: 'Life Cycle Test',
     component: LifeCycleTest,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/movie-search',
@@ -63,17 +71,29 @@ export const routes = [
     component: MovieSearch,
     exact: true,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/movie-search/:movieId',
     label: 'Movie Details',
     component: MovieDetails,
     showInMenu: false,
+    isProtected: true,
   },
   {
     path: '/todos',
     label: 'Todos',
     component: Todos,
+    exact: true,
     showInMenu: true,
+    isProtected: true,
+  },
+  {
+    path: '/login',
+    label: 'Login',
+    component: LoginPage,
+    exact: true,
+    showInMenu: true,
+    isProtected: false,
   },
 ];

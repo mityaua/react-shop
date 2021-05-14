@@ -27,6 +27,9 @@ const Todos = lazy(() =>
 const LoginPage = lazy(() =>
   import('../pages/LoginPage' /* webpackChunkName: "LoginPage" */),
 );
+const LogoutPage = lazy(() =>
+  import('../pages/LogoutPage' /* webpackChunkName: "LogoutPage" */),
+);
 
 export const routes = [
   {
@@ -95,5 +98,14 @@ export const routes = [
     exact: true,
     showInMenu: true,
     isProtected: false,
+    isNotLoggedOn: true,
+  },
+  {
+    path: '/logout',
+    label: 'Logout',
+    component: LogoutPage,
+    exact: true,
+    showInMenu: true,
+    isProtected: true,
   },
 ];

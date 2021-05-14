@@ -11,6 +11,13 @@ const useStyles = createUseStyles({
   },
 });
 
+const checkShowPage = (showInMenu, isProtected, isLoggedOn, isNotLoggedOn) => {
+  const showProtected = !isProtected || (isProtected && isLoggedOn);
+  const showLoggedOn = !isNotLoggedOn || (isNotLoggedOn && !isLoggedOn);
+
+  return showInMenu && showProtected && showLoggedOn;
+};
+
 const Menu = () => {
   const classes = useStyles();
   const isLoggedOn = useSelector(state => state.user.isLoggedOn);
@@ -19,17 +26,26 @@ const Menu = () => {
     <nav className="menu">
       <p>Menu</p>
 
-      {routes.map(({ path, exact, showInMenu, label, isProtected }) =>
-        showInMenu && (!isProtected || (isProtected && isLoggedOn)) ? (
-          <NavLink
-            activeClassName={classes.active}
-            key={path}
-            exact={exact}
-            to={path}
-          >
-            {label}
-          </NavLink>
-        ) : null,
+      {routes.map(
+        ({ path, exact, showInMenu, label, isProtected, isNotLoggedOn }) => {
+          const show = checkShowPage(
+            showInMenu,
+            isProtected,
+            isLoggedOn,
+            isNotLoggedOn,
+          );
+
+          return show ? (
+            <NavLink
+              activeClassName={classes.active}
+              key={path}
+              exact={exact}
+              to={path}
+            >
+              {label}
+            </NavLink>
+          ) : null;
+        },
       )}
     </nav>
   );

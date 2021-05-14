@@ -26,8 +26,8 @@ const LoginPage = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('spoke@mail.com');
+  const [password, setPassword] = useState('1234567');
   const isLoading = useSelector(state => state.user.isLoading);
 
   const handleChangeEmail = e => setEmail(e.target.value);

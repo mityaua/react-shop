@@ -30,6 +30,9 @@ const LoginPage = lazy(() =>
 const LogoutPage = lazy(() =>
   import('../pages/LogoutPage' /* webpackChunkName: "LogoutPage" */),
 );
+const Hooks = lazy(() =>
+  import('../pages/Hooks' /* webpackChunkName: "LogoutPage" */),
+);
 
 export const routes = [
   {
@@ -107,5 +110,11 @@ export const routes = [
     exact: true,
     showInMenu: true,
     isProtected: true,
+  },
+  {
+    path: '/hooks',
+    label: 'Hooks',
+    component: Hooks,
+    showInMenu: true,
   },
 ];

@@ -39,8 +39,10 @@ const SingleCounter = ({
 
       <div className={classes.buttons}>
         <button onClick={handleDecrement}>-</button>
-        <p>{value}</p>
-        <button onClick={handleIncrement}>+</button>
+        <p data-testid="value">{value}</p>
+        <button data-testid="increment-button" onClick={handleIncrement}>
+          +
+        </button>
       </div>
       <hr />
     </div>
@@ -48,3 +50,5 @@ const SingleCounter = ({
 };
 
 export default SingleCounter;
+
+export const sum = (a, b) => a + b;
